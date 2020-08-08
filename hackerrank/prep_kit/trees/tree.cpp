@@ -124,6 +124,17 @@ class Solution {
       }
       return root;
     }
+
+    bool isBST(Node* root) {
+      static Node *prev = null;   
+      if (root) { 
+        if (!isBST(root->left)) return false; 
+        if (prev != NULL && root->data <= prev->data) return false;
+        prev = root;
+        return isBST(root->right);  
+      }
+      return true;  
+    }
 };
 
 int main() {
@@ -141,6 +152,9 @@ int main() {
 
   // myTree.levelOrder(root);
 
-  myTree.topView(root);
+  // myTree.topView(root);
+
+  bool res = myTree.isBST(root);
+  (res) ? std::cout<<"yes" : std::cout<<"no";
   return 0;
 }
