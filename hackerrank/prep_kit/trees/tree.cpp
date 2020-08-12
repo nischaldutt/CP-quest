@@ -135,6 +135,20 @@ class Solution {
       }
       return true;  
     }
+
+    bool checkBst(Node* root) {
+      return checkBstUtil(root, INT_MIN, INT_MAX);
+    }
+
+    bool checkBstUtil(Node* root, int min, int max) {
+      if(!root) return true;
+      if(root->data <= max || root->data >= min) return false;
+
+      if(checkBstUtil(root->left, min, root->data) && 
+        checkBstUtil(root->right, root->data, max)) 
+          return true;
+      return false;
+    }
 };
 
 int main() {
