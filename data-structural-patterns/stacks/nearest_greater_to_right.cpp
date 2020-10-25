@@ -1,4 +1,4 @@
-// Find nearest greatest element to the right of current element.
+// Find nearest greater element to the right of current element.
 
 #include <bits/stdc++.h>
 #include <vector>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void nearestGreatestToRight(vector<int> arr, int n) {
+void nearestGreaterToRight(vector<int> arr, int n) {
   vector<int> result;
   stack<int> myStack;
   for(int i = n-1; i >= 0; i--) {
@@ -47,6 +47,6 @@ int main() {
     cin>>element;
     arr.push_back(element);
   }
-  nearestGreatestToRight(arr, arr.size());
+  nearestGreaterToRight(arr, arr.size());
   return 0;
 }

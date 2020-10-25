@@ -1,4 +1,4 @@
-// Find nearest greatest element to the left of current element.
+// Find nearest smaller element to the right of current element.
 
 #include <bits/stdc++.h>
 #include <vector>
@@ -7,10 +7,10 @@
 
 using namespace std;
 
-void nearestGreatestToLeft(vector<int> arr, int n) {
+void nearestSmallerToRight(vector<int> arr, int n) {
   vector<int> result;
   stack<int> myStack;
-  for(int i = 0; i < n; i++) {
+  for(int i = n-1; i >= 0; i--) {
     if(myStack.empty()) {
       result.push_back(-1);
     }
@@ -21,6 +21,7 @@ void nearestGreatestToLeft(vector<int> arr, int n) {
       while(!myStack.empty() && myStack.top() <= arr[i]) {
         myStack.pop();
       }
+
       if(myStack.empty()) {
         result.push_back(-1);
       }
@@ -31,6 +32,7 @@ void nearestGreatestToLeft(vector<int> arr, int n) {
     myStack.push(arr[i]);
   }
 
+  reverse(result.begin(), result.end());
   for(auto element: result) {
     cout<<element<<" ";
   }
@@ -45,6 +47,6 @@ int main() {
     cin>>element;
     arr.push_back(element);
   }
-  nearestGreatestToLeft(arr, arr.size());
+  nearestSmallerToRight(arr, arr.size());
   return 0;
 }
