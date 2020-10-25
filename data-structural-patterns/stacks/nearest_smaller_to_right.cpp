@@ -14,11 +14,11 @@ void nearestSmallerToRight(vector<int> arr, int n) {
     if(myStack.empty()) {
       result.push_back(-1);
     }
-    else if(!myStack.empty() && myStack.top() > arr[i]) {
+    else if(!myStack.empty() && myStack.top() < arr[i]) {
       result.push_back(myStack.top());
     }
-    else if(!myStack.empty() && myStack.top() <= arr[i]) {
-      while(!myStack.empty() && myStack.top() <= arr[i]) {
+    else if(!myStack.empty() && myStack.top() >= arr[i]) {
+      while(!myStack.empty() && myStack.top() >= arr[i]) {
         myStack.pop();
       }
 
