@@ -1,6 +1,6 @@
 // Rain water trapping problem
 // Reference: https://www.geeksforgeeks.org/trapping-rain-water/
-// Time complexity: O(n), where n is the size of heightVector.
+// Time complexity: O(n), where n is the size of heightVector
 
 #include <bits/stdc++.h>
 #include <vector>
