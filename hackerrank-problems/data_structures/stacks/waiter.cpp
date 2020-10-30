@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// get first 1200 primes using Sieve Eratothanese algorithm
 vector<int> getSievePrimes(int min, int max) {
   vector<int> primes;
   vector<int> list(max + 1, 0);
@@ -64,7 +65,7 @@ int main() {
       }
       return 0;
     }
-    
+
     myStack = stackA;
   }
   return 0;
