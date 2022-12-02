@@ -29,6 +29,7 @@ int main()
 
   for (int i = 0; i < n; i++)
   {
+    cout << "enter array element: ";
     cin >> arr[i];
   }
 
