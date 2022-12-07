@@ -1,11 +1,14 @@
 // maximum area in binary matrix
 
 // input
-// enter array length: 7
-// 6 2 5 4 5 1 6
+// 4 4
+// 0 1 1 0
+// 1 1 1 1
+// 1 1 1 1
+// 1 1 0 0
 
 // output:
-// 12
+// 6
 
 // time complexity: O(n)
 
