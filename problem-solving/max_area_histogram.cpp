@@ -5,7 +5,7 @@
 // 6 2 5 4 5 1 6
 
 // output:
-//
+// 12
 
 // time complexity: O(n)
 
