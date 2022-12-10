@@ -1,4 +1,4 @@
-// kth smallest number in a given array
+// kth largest number in a given array
 
 // input
 // enter array length: 6
@@ -6,7 +6,7 @@
 // 3
 
 // output:
-// 7
+// 10
 
 // time complexity: O(nlogk)
 
