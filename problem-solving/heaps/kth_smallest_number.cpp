@@ -8,7 +8,7 @@
 // output:
 // 7
 
-// time complexity: O(n)
+// time complexity: O(nlogk)
 
 #include <bits/stdc++.h>
 
