@@ -1,8 +1,9 @@
-// find index of an element in a rotated sorted array
+// search for an element in a nearly sorted array
 
 // input
-// enter array length: 8
-// 11 12 15 18 2 5 6 8
+// enter array length: 5
+// 5 10 30 20 40
+// 10
 
 // output:
 // 2
