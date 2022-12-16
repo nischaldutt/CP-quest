@@ -1,4 +1,4 @@
-//
+// connect ropes with given lengths with minimum cost
 
 // input
 // enter array length: 1
