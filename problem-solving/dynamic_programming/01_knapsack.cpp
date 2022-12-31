@@ -1,8 +1,15 @@
 // 0/1 knapsack problem
 
 // input:
+// enter n: 4
+// enter weights: 1, 3, 4, 5
+// enter profits: 1, 4, 5, 7
+// enter weight of the knapsack: 7
 
 // output:
+// max profit: 9
+
+// time complexity: O(n*w) i.e. proportional to sizeof the matrix
 
 #include <bits/stdc++.h>
 
