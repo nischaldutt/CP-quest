@@ -11,6 +11,8 @@
 
 // time complexity: O(n*w) i.e. proportional to sizeof the matrix
 
+// recursive solution
+
 #include <bits/stdc++.h>
 
 #include <cstring>
