@@ -33,11 +33,11 @@ typedef pair<int, pair<int, int>> ppi;
 int knapsack(vector<int> weightVector, vector<int> profitVector, int w, int n, int** matrix) {
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < w + 1; j++) {
-      if (weightVector[i - 1] <= w) {
-        matrix[i][j] = max(profitVector[i - 1] + knapsack(weightVector, profitVector, w - weightVector[i - 1], i - 1, matrix),
-                           knapsack(weightVector, profitVector, w, i - 1, matrix));
-      } else if (weightVector[i - 1] > w) {
-        matrix[i][j] = knapsack(weightVector, profitVector, w, i - 1, matrix);
+      if (weightVector[i - 1] <= j) {
+        matrix[i][j] = max(profitVector[i - 1] + knapsack(weightVector, profitVector, j - weightVector[i - 1], i - 1, matrix),
+                           knapsack(weightVector, profitVector, j, i - 1, matrix));
+      } else if (weightVector[i - 1] > j) {
+        matrix[i][j] = knapsack(weightVector, profitVector, j, i - 1, matrix);
       }
     }
   }
