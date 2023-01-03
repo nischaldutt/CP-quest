@@ -46,6 +46,7 @@ int knapsack(vector<int> weightVector, vector<int> profitVector, int w, int n, i
 }
 
 int main() {
+  // initialising matrix using memset
   // memset(matrix, -1, sizeof(matrix));
 
   int weight, profit, n, w;
