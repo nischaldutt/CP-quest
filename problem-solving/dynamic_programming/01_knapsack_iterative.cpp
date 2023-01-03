@@ -34,10 +34,9 @@ int knapsack(vector<int> weightVector, vector<int> profitVector, int w, int n, i
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < w + 1; j++) {
       if (weightVector[i - 1] <= j) {
-        matrix[i][j] = max(profitVector[i - 1] + knapsack(weightVector, profitVector, j - weightVector[i - 1], i - 1, matrix),
-                           knapsack(weightVector, profitVector, j, i - 1, matrix));
+        matrix[i][j] = max(profitVector[i - 1] + matrix[i - 1][j - weightVector[i - 1]], matrix[i - 1][j]);
       } else if (weightVector[i - 1] > j) {
-        matrix[i][j] = knapsack(weightVector, profitVector, j, i - 1, matrix);
+        matrix[i][j] = matrix[i - 1][j];
       }
     }
   }
