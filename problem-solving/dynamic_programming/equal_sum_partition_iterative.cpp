@@ -2,7 +2,7 @@
 
 // input:
 // enter n: 4
-// enter weights:1, 5, 11, 5
+// enter weights: 1, 5, 11, 5
 
 // output:
 // equal sum partition: true
@@ -32,9 +32,9 @@ bool subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < sum + 1; j++) {
       if (myArray[i - 1] <= j) {
-        matrix[i][j] = myArray[i - 1] + subsetSum(myArray, sum - myArray[i - 1], i - 1, matrix) || subsetSum(myArray, sum, n - 1, matrix);
+        matrix[i][j] = myArray[i - 1] + matrix[i - 1][j - myArray[i - 1]] || matrix[i - 1][j];
       } else if (myArray[i - 1] > j) {
-        matrix[i][j] = subsetSum(myArray, sum, n - 1, matrix);
+        matrix[i][j] = matrix[i - 1][j];
       }
     }
   }
