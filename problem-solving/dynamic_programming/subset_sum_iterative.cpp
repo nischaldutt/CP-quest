@@ -1,15 +1,14 @@
-// 0/1 knapsack problem
+// subset sum problem
 
 // input:
-// enter n: 4
-// enter weights: 1, 3, 4, 5
-// enter profits: 1, 4, 5, 7
-// enter weight of the knapsack: 7
+// enter n: 5
+// enter weights: 2, 3, 7, 8, 10
+// enter weight of the knapsack: 11
 
 // output:
-// max profit: 9
+// subset sum: true
 
-// time complexity: O(n*w) i.e. proportional to sizeof the matrix
+// time complexity: O(n*sum) i.e. proportional to sizeof the matrix
 
 // iterative solution
 
@@ -76,5 +75,7 @@ int main() {
 
   string result = subsetSum(myArray, sum, n, matrix) ? "true" : "false";
 
-  cout << "Subset Sum: " << result << endl;
+  cout << "subset sum: " << result << endl;
+
+  return 0;
 }
