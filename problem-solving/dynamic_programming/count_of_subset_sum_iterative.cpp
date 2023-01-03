@@ -1,12 +1,12 @@
-// subset sum problem
+// count of subset sum problem
 
 // input:
-// enter n: 5
-// enter weights: 2, 3, 7, 8, 10
-// enter weight of the knapsack: 11
+// enter n: 6
+// enter elements: 2, 3, 5, 6, 8, 10
+// enter the sum: 10
 
 // output:
-// subset sum: true
+// count of subsets: 3
 
 // time complexity: O(n*sum) i.e. proportional to sizeof the matrix
 
@@ -29,11 +29,11 @@ using namespace std;
 typedef pair<int, int> pi;
 typedef pair<int, pair<int, int>> ppi;
 
-bool subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
+int countOfSubsetSum(vector<int> myArray, int sum, int n, int** matrix) {
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < sum + 1; j++) {
       if (myArray[i - 1] <= j) {
-        matrix[i][j] = matrix[i - 1][j - myArray[i - 1]] || matrix[i - 1][j];
+        matrix[i][j] = matrix[i - 1][j - myArray[i - 1]] + matrix[i - 1][j];
       } else if (myArray[i - 1] > j) {
         matrix[i][j] = matrix[i - 1][j];
       }
@@ -69,15 +69,15 @@ int main() {
   for (int i = 0; i < n + 1; i++) {
     for (int j = 0; j < sum + 1; j++) {
       if (i == 0)
-        matrix[i][j] = false;
+        matrix[i][j] = 0;
       if (j == 0)
-        matrix[i][j] = true;
+        matrix[i][j] = 1;
     }
   }
 
-  string result = subsetSum(myArray, sum, n, matrix) ? "true" : "false";
+  int result = countOfSubsetSum(myArray, sum, n, matrix);
 
-  cout << "subset sum: " << result << endl;
+  cout << "count of subsets: " << result << endl;
 
   return 0;
 }
