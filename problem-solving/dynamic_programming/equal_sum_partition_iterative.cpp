@@ -32,7 +32,7 @@ bool subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < sum + 1; j++) {
       if (myArray[i - 1] <= j) {
-        matrix[i][j] = myArray[i - 1] + matrix[i - 1][j - myArray[i - 1]] || matrix[i - 1][j];
+        matrix[i][j] = matrix[i - 1][j - myArray[i - 1]] || matrix[i - 1][j];
       } else if (myArray[i - 1] > j) {
         matrix[i][j] = matrix[i - 1][j];
       }
