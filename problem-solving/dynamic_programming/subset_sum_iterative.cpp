@@ -2,8 +2,8 @@
 
 // input:
 // enter n: 5
-// enter weights: 2, 3, 7, 8, 10
-// enter weight of the knapsack: 11
+// enter elements: 2, 3, 7, 8, 10
+// enter the sum: 11
 
 // output:
 // subset sum: true
