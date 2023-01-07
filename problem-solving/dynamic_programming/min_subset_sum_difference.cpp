@@ -1,12 +1,12 @@
-// subset sum problem
+// minimum subset sum difference problem
 
 // input:
-// enter n: 5
-// enter elements: 2, 3, 7, 8, 10
-// enter the sum: 11
+// enter n: 3
+// enter elements: 1, 2, 7
+// enter the sum: 10
 
 // output:
-// subset sum: true
+// minimum subset sum difference:
 
 // time complexity: O(n*sum) i.e. proportional to sizeof the matrix
 
@@ -29,7 +29,7 @@ using namespace std;
 typedef pair<int, int> pi;
 typedef pair<int, pair<int, int>> ppi;
 
-bool subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
+vector<int> subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
   for (int i = 1; i < n + 1; i++) {
     for (int j = 1; j < sum + 1; j++) {
       if (myArray[i - 1] <= j) {
@@ -40,7 +40,29 @@ bool subsetSum(vector<int> myArray, int sum, int n, int** matrix) {
     }
   }
 
-  return matrix[n][sum];
+  vector<int> myVector;
+
+  for (int j = 0; j < (sum / 2) + 1; j++) {
+    if (matrix[n][j])
+      myVector.push_back(j);
+  }
+
+  return myVector;
+}
+
+int getMinSubsetSumDifference(vector<int> myArray, int sum, int n, int** matrix) {
+  int minSubsetSumDiff = INT_MAX;
+  int value;
+  vector<int> minValueCandidates = subsetSum(myArray, sum, n, matrix);
+
+  for (auto x : minValueCandidates) {
+    value = sum - (2 * (x));
+
+    if (minSubsetSumDiff > value)
+      minSubsetSumDiff = value;
+  }
+
+  return minSubsetSumDiff;
 }
 
 int main() {
@@ -75,9 +97,9 @@ int main() {
     }
   }
 
-  string result = subsetSum(myArray, sum, n, matrix) ? "true" : "false";
+  int minSubsetSumDiff = getMinSubsetSumDifference(myArray, sum, n, matrix);
 
-  cout << "subset sum: " << result << endl;
+  cout << "minimum subset sum difference: " << minSubsetSumDiff << endl;
 
   return 0;
 }
