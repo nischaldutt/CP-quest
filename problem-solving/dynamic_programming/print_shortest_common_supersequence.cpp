@@ -77,6 +77,16 @@ string shortestCommonSubsequence(string x, string y, int n, int m) {
     }
   }
 
+  while (i > 0) {
+    result.push_back(x[i - 1]);
+    i--;
+  }
+
+  while (j > 0) {
+    result.push_back(y[j - 1]);
+    j--;
+  }
+
   reverse(result.begin(), result.end());
 
   return result;
