@@ -5,7 +5,7 @@
 // enter string y: abedfhr
 
 // output:
-// length of longest common subsequence: 4
+// length of longest common subsequence: abcf
 
 // time complexity: O(n*m) i.e. proportional to sizeof the matrix
 
