@@ -1,11 +1,11 @@
-// longest common subsequence problem
+// minimum number of insertions and deletions required to convert string a to b
 
 // input:
-// enter string x: abcdgh
-// enter string y: abedfhr
+// enter string x: heap
+// enter string y: pea
 
 // output:
-// length of longest common subsequence: 4
+// length of longest common subsequence: 3
 
 // time complexity: O(n*m) i.e. proportional to sizeof the matrix
 
