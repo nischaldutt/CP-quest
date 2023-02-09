@@ -1,16 +1,4 @@
-// print the kth symbol in grammar
-
-// input 1:
-// enter n: 4
-// enter k: 3
-
-// output 1: 1
-
-// input 2:
-// enter n: 4
-// enter k: 1
-
-// output 2: 0
+// tower of hanoi
 
 #include <bits/stdc++.h>
 
