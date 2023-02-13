@@ -1,3 +1,12 @@
+// count all occurances of anagrams of given query string
+
+// input:
+// enter string: aabaabaa
+// enter query string: aaba
+
+// output:
+// total anagram count: 4
+
 #include <bits/stdc++.h>
 
 #include <cstring>
